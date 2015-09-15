@@ -41,10 +41,7 @@ public class HttpRequest {
 //			}
 					
 			
-//			Map<String, List<String>> map = connection.getHeaderFields();
-//			for (String key : map.keyset) {
-//				System.out.println(key + "--->" + map.get(key));
-//			}
+
 			in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			String line;
 			while ( (line = in.readLine()) != null) {
@@ -53,7 +50,7 @@ public class HttpRequest {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("发送GET请求出现异常 " + e);
+			System.out.println("发送GET请求出现异常!!! " + e);
 		}
 		finally {
 			try {
