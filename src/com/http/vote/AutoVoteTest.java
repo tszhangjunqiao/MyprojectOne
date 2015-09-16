@@ -1,6 +1,7 @@
 package com.http.vote;
 import com.rand.util.*;
 
+import java.net.HttpURLConnection;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -10,16 +11,20 @@ import com.util.*;
 public class AutoVoteTest {
 
 	public static void main(String[] args) throws Exception {
+		
+		
+//		System.getProperties().setProperty("http.proxyHost", "58.222.254.11");
+//		System.getProperties().setProperty("http.proxyPort", "8080");		
 		String nameChinese = RandomTool.getChineseName();
 		@SuppressWarnings("deprecation")
 		String name = URLEncoder.encode(nameChinese); 
 		String tel = RandomTool.getTelNumber();
 		String formhash = "a10621fe";
 		String tomhash = "253059";
-//		System.out.println(name);
+		System.out.println(name);
 //		System.out.println(tel);
-//		String reFresh = HttpRequest.sendGet("http://hongbao.xnjhs.com/dz/plugin.php?id=tom_mengbao&mod=info&vid=1&tid=197&from=timeline&isappinstalled=0");
-//		System.out.println(reFresh);
+		String reFresh = HttpRequest.sendGet("http://hongbao.xnjhs.com/dz/plugin.php?id=tom_mengbao&mod=info&vid=1&tid=197&from=timeline&isappinstalled=0");
+		System.out.println(reFresh);
 		
 //		String urlPre = "http://hongbao.xnjhs.com/dz/plugin.php?id=tom_mengbao&mod=save&act=clicks&formhash="+formhash+"&vid=1";
 //		System.out.println(urlPre);
